@@ -1,0 +1,18 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+@font-face {
+  @include ff(Manrope, Manrope-Regular, 400);
+}
+
+@font-face {
+  @include ff(Manrope, Manrope-Medium, 500);
+}
+
+@font-face {
+  @include ff(Manrope, Manrope-Bold, 700);
+}
+
+@font-face {
+  @include ff(Manrope, Manrope-Black, 900);
+};
