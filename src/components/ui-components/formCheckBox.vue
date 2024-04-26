@@ -1,7 +1,17 @@
 <script lang="ts" setup>
-import {ref} from "vue";
 
-let check:Ref<boolean> = ref(false)
+
+
+
+const a = ref<number>(4)
+
+const getData = computed(() => {
+  return  a + 1
+})
+
+
+
+let check = ref<boolean>(false)
   function clickEventHandler(){
       check.value = !check.value
   }

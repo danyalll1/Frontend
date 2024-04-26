@@ -1,11 +1,15 @@
 <script setup lang="ts">
-  import authLayout from '@/components/layouts/auth/layout.vue'
+
+
+
 
 
 </script>
 
 <template>
-  <authLayout/>
+  <router-view>
+
+  </router-view>
 </template>
 
 <style scoped>

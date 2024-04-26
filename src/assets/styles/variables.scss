@@ -2,14 +2,30 @@
 $font: 'Manrope', sans-serif;
 
 //colors
-$bg-primary: #1D2430;
-$bg-secondary: #3A475C;
-$white: #FEFEFE;
-$error: #DB0D00;
-$error-secondary: #EA837D;
-$text-grey: #7E7E7E;
-$button-default: #02B877;
-$button-hover: #0b9b66;
+$bg-primary: #fdfdfd;
+$bg-secondary: #f4f4f6;
+
+
+$blue-primary: #0057f7;
+
+
+
+@media (prefers-color-scheme: light) {
+  $bg-primary: #fdfdfd;
+  $bg-secondary: #f4f4f6;
+
+
+  $blue-primary: #0057f7;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  $bg-primary: #322525;
+  $bg-secondary: #2d2d37;
+
+
+  $blue-primary: #0057f7;
+}
 
 //screen width
 $desktop: 1440;
