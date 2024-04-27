@@ -1,7 +1,11 @@
 <script setup>
 
-  import '../../main-menu.vue'
-  import MainMenu from "@/components/main-menu.vue";
+
+  import MainMenu from "@/components/layouts/main/main-menu.vue";
+  import BreadCrumbs from "@/components/layouts/main/bread-crumbs.vue";
+  import AccountInfo from "@/components/layouts/main/account-info.vue";
+
+
 
 
 </script>
@@ -11,12 +15,15 @@
 
   <div class="container">
     <div class="container__menu">
-      <slot name="menu"></slot>
       <main-menu></main-menu>
     </div>
     <div class="container__page">
-      <slot name="layout"></slot>
+      <div class="container__page-header">
+        <bread-crumbs/>
+        <account-info/>
+      </div>
 
+      <slot></slot>
     </div>
   </div>
 
@@ -32,16 +39,19 @@
     gap: 40px;
 
     &__menu{
-
       width: 100%;
       max-width: 300px;
-      background: darkblue;
     }
 
     &__page{
-
       width: 100%;
-      background: #fdfdfd;
+      &-header{
+        gap: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
     }
   }
 
