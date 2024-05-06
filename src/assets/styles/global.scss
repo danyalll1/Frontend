@@ -1,6 +1,11 @@
-@forward "variables";
-@forward "mixins";
-@forward "fonts";
+@use './variables' as *;
+@use './mixins' as *;
+@use './fonts' as *;
+
+
+.container{
+  @include font(16px, 32px ,500)
+}
 
 
 

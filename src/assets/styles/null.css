@@ -17,15 +17,18 @@ body {
   flex-direction: column;
   position: relative;
 }
+
 a {
   text-decoration: none;
   display: block;
   transition: color 0.3s, opacity 0.3s, background-color 0.3s;
   outline: none;
 }
+
 h1, h2, h3, h4, p {
   margin: 0;
 }
+
 button {
   appearance: none;
   border: none;
@@ -34,13 +37,16 @@ button {
   background: transparent;
   transition: 0.3s;
 }
+
 svg path, svg circle, svg rect {
   transition: 0.3s;
 }
+
 ul {
   padding: 0;
   margin: 0;
 }
+
 ul li {
   list-style-type: none;
 }

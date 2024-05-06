@@ -3,7 +3,8 @@
 @mixin ff($_family, $_name, $_weight, $_style: normal) {
   font-family: '#{$_family}';
   src: local('#{$_name}');
-  src: url('../assets/fonts/#{$_name}.ttf') format('ttf');
+  src: url('@/assets/fonts/#{$_name}.woff') format('woff');  src: url('@/assets/fonts/#{$_name}.woff2') format('woff2');
+
   font-weight: $_weight;
   font-style: $_style;
   font-display: swap;

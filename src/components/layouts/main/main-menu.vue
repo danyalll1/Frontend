@@ -1,111 +1,157 @@
-<script setup>
-
-
+<script lang="ts" setup>
+import MenuLink from "@/components/ui-components/menu-link.vue";
+const menuData: object = [
+  {
+    title: 'Навигация',
+    links: [
+      {
+        title: 'Заказы',
+        link: '/orders',
+      },
+      {
+        title: 'Сотрудники',
+        link: '/employees',
+      },
+      {
+        title: 'Личный кабинет',
+        link: '/profile',
+      },
+    ],
+  },
+  {
+    title: 'Быстрые действия',
+    links: [
+      {
+        title: 'Ваша ссылка',
+        link: '/1',
+      }
+    ],
+  },
+]
+const emit = defineEmits(['changeMenuVisibility'])
+function changeMenuVisibility(){
+  emit('changeMenuVisibility')
+}
 
 </script>
 
 
 <template>
-  <div class="menu__wrapper">
-    <div class="menu__logo">
-      BitNet System
+  <div class="menu-container">
+    <div class="menu__wrapper">
+      <div class="menu__top">
+        <div class="menu__logo">
+          BitNet System
+        </div>
+        <nav v-for="(item,idx) in menuData" class="menu__block">
+          <div class="menu__title">
+            {{ item.title }}
+          </div>
+          <ul v-for="(link, index) in item.links" class="menu__buttons">
+            <menu-link :link-to="link.link">
+              {{ link.title }}
+            </menu-link>
+          </ul>
+        </nav>
+      </div>
+      <div class="menu__bottom">
+        <div class="menu__bottom-top">
+          <menu-link @click="changeMenuVisibility">Скрыть меню</menu-link>
+        </div>
+        <div class="menu__bottom-bottom">
+          <menu-link link-to="/settings">Настройки</menu-link>
+          <menu-link link-to="/settings">Выйти</menu-link>
+        </div>
+      </div>
     </div>
-    <nav class="menu__block">
-      <div class="menu__title">
-        Навигация
-      </div>
-      <ul class="menu__buttons">
-        <li class="menu__button">
-          <div class="icon">icon</div>
-          Сотрудники
-        </li>
-        <li class="menu__button">
-          <div class="icon">icon</div>
-          Личный кабинет
-        </li>
-        <li class="menu__button">
-          <div class="icon">icon</div>
-          Заказы
-        </li>
-      </ul>
-    </nav>
-    <nav class="menu__block">
-      <div class="menu__title">
-        Быстрые действия
-      </div>
-      <ul class="menu__buttons">
-        <li class="menu__button">
-          <div class="icon">icon</div>
-          Сотрудники
-        </li>
-        <li class="menu__button">
-          <div class="icon">icon</div>
-          Личный кабинет
-        </li>
-        <li class="menu__button">
-          <div class="icon">icon</div>
-          Заказы
-        </li>
-      </ul>
-    </nav>
-
-
   </div>
-
-
-
 </template>
 
 
 <style lang="scss" scoped>
-  .menu{
+.menu {
+
+  &-container{
+    height: 100%;
+    padding: 20px;
+    background: $bg-primary;
+    border-radius: 24px;
+    border: 1px solid $border-color;
+
+  }
+
+  &__wrapper {
+    height: 100%;
+    justify-content: space-between;
+    max-height: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 
 
-    &__wrapper{
-      padding: 20px;
-      background: #fdfdfd;
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
+    &::-webkit-scrollbar{
+      background-color: $bg-secondary;
+      width: 5px;
+      border-radius: 10px;
     }
-    &__logo{
-      text-align: center;
-      padding: 18px;
-      background-color: #0057f7;
-      color: #fdfdfd ;
-      border-radius: 8px;
-    }
-
-    &__block{
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid #a1a8b7;
-      &:last-child{
-        border-bottom: none;
-      }
-    }
-
-    &__title{
-      font-size: 18px;
-      line-height: 26px;
+    &::-webkit-scrollbar-track{
 
     }
-
-    &__buttons{
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+    &::-webkit-scrollbar-thumb{
+      border-radius: 10px;
+      background-color: $accent-primary;
     }
 
-    &__button{
-      display: flex;
-      gap: 4px;
-      align-items: center;
-      padding: 12px 16px;
+
+  }
+
+  &__logo {
+    @include font(18px, 20px, 800);
+    text-align: center;
+    padding: 18px;
+    background-color: $accent-primary;
+    color: $text-secondary;
+    border-radius: 6px;
+  }
+
+  &__block {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #a1a8b7;
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
     }
   }
+
+  &__title {
+    font-size: 18px;
+    line-height: 26px;
+
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__bottom{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &-top{
+      margin-top: auto
+    }
+
+  }
+}
 
 
 </style>

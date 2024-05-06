@@ -21,6 +21,14 @@ const routes = [
         component: profilePage,
         name:'Личный кабинет'
     },
+    {
+        path: '/employees',
+        meta:{
+            layout: mainLayout
+        },
+        component: profilePage,
+        name:'Сотрудники'
+    },
     { path: '/auth', component: auth },
 ]
 

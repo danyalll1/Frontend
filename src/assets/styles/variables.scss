@@ -1,12 +1,18 @@
 //font
-$font: 'Manrope', sans-serif;
+$font: 'Inter', sans-serif;
 
 //colors
 $bg-primary: #fdfdfd;
 $bg-secondary: #f4f4f6;
+$border-color: #e1e3e8;
+
+$accent-primary: #0057f7;
+$accent-hover: #e4ecfd;
 
 
-$blue-primary: #0057f7;
+$text-primary: #0E1117;
+$text-secondary:#FFFFFF;
+$text-disabled: #858FA3;
 
 
 
@@ -14,8 +20,6 @@ $blue-primary: #0057f7;
   $bg-primary: #fdfdfd;
   $bg-secondary: #f4f4f6;
 
-
-  $blue-primary: #0057f7;
 }
 
 /* Dark mode */
