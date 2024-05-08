@@ -11,7 +11,8 @@ const routes = [
         meta:{
             layout: mainLayout
         },
-        component: ordersPage
+        component: ordersPage,
+        name: 'Заказы'
     },
     {
         path: '/profile',

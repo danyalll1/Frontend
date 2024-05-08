@@ -17,8 +17,8 @@ function changeMenuVisibility(){
 <template>
 
   <div class="container">
-    <div v-if="menuVisible" class="container__menu">
-      <main-menu @changeMenuVisibility="changeMenuVisibility"></main-menu>
+    <div :class="{hidden : !menuVisible}" class="container__menu">
+      <main-menu @changeMenuVisibility="changeMenuVisibility" :menuVisibility="menuVisible"></main-menu>
     </div>
     <div class="container__page">
       <div class="container__page-header">
@@ -42,11 +42,12 @@ function changeMenuVisibility(){
   gap: 40px;
 
   &__menu {
+    transition: width ease 0.5s;
     width: 100%;
     max-width: 300px;
 
     &.hidden{
-      width: 0;
+      width: 96px;
     }
 
   }
